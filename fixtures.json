@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "opponent": "Chelsea",
+    "competition": "Premier League",
+    "venue": "Anfield",
+    "date": "2025-02-09T16:30:00Z",
+    "stream": "Sky Sports Main Event",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-chelsea"
+  },
+  {
+    "id": 2,
+    "opponent": "Bayern Munich",
+    "competition": "UEFA Champions League Round of 16",
+    "venue": "Allianz Arena",
+    "date": "2025-02-19T20:00:00Z",
+    "stream": "Paramount+",
+    "watchLink": "https://watch.gameon/fixtures/bayern-liverpool"
+  },
+  {
+    "id": 3,
+    "opponent": "Tottenham Hotspur",
+    "competition": "Premier League",
+    "venue": "Tottenham Hotspur Stadium",
+    "date": "2025-02-23T16:30:00Z",
+    "stream": "Sky Sports Premier League",
+    "watchLink": "https://watch.gameon/fixtures/spurs-liverpool"
+  },
+  {
+    "id": 4,
+    "opponent": "Everton",
+    "competition": "Premier League",
+    "venue": "Goodison Park",
+    "date": "2025-03-03T20:00:00Z",
+    "stream": "TNT Sports 1",
+    "watchLink": "https://watch.gameon/fixtures/merseyside-derby"
+  },
+  {
+    "id": 5,
+    "opponent": "Arsenal",
+    "competition": "Premier League",
+    "venue": "Anfield",
+    "date": "2025-03-08T12:30:00Z",
+    "stream": "BT Sport 1",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-arsenal"
+  },
+  {
+    "id": 6,
+    "opponent": "Aston Villa",
+    "competition": "Premier League",
+    "venue": "Villa Park",
+    "date": "2025-03-15T17:30:00Z",
+    "stream": "Peacock Premium",
+    "watchLink": "https://watch.gameon/fixtures/villa-liverpool"
+  },
+  {
+    "id": 7,
+    "opponent": "Manchester City",
+    "competition": "Premier League",
+    "venue": "Etihad Stadium",
+    "date": "2025-03-30T15:30:00Z",
+    "stream": "Sky Sports Ultra HD",
+    "watchLink": "https://watch.gameon/fixtures/man-city-liverpool"
+  },
+  {
+    "id": 8,
+    "opponent": "West Ham United",
+    "competition": "Premier League",
+    "venue": "London Stadium",
+    "date": "2025-04-05T17:30:00Z",
+    "stream": "USA Network",
+    "watchLink": "https://watch.gameon/fixtures/west-ham-liverpool"
+  }
+]

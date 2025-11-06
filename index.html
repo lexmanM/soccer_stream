@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameOn | Liverpool Streaming Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --primary: #c8102e;
+        --primary-soft: rgba(200, 16, 46, 0.12);
+        --primary-tint: rgba(200, 16, 46, 0.2);
+        --primary-strong: rgba(200, 16, 46, 0.85);
+        --accent-teal: #00b2a9;
+        --accent-teal-soft: rgba(0, 178, 169, 0.18);
+        --highlight: #f6eb61;
+        --highlight-soft: rgba(246, 235, 97, 0.35);
+        --surface: rgba(255, 255, 255, 0.94);
+        --surface-strong: #ffffff;
+        --shadow-soft: rgba(200, 16, 46, 0.12);
+        --shadow-strong: rgba(200, 16, 46, 0.28);
+        --text-strong: #c8102e;
+        --text-base: rgba(200, 16, 46, 0.78);
+        --text-muted: rgba(200, 16, 46, 0.62);
+        font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--surface-strong);
+        color: var(--text-base);
+      }
+
+      .app-shell {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background: var(--primary);
+        padding: 3rem clamp(1.5rem, 5vw, 4rem);
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--primary-soft);
+      }
+
+      header::after {
+        content: none;
+      }
+
+      .header-inner {
+        position: relative;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .logo-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--primary);
+        border: 3px solid rgba(200, 16, 46, 0.6);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: var(--surface-strong);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        box-shadow:
+          0 16px 26px var(--shadow-strong),
+          inset 0 2px 0 rgba(255, 255, 255, 0.28),
+          inset 0 -4px 12px rgba(0, 0, 0, 0.12);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .brand-name {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--surface-strong);
+      }
+
+      .brand-tagline {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.75);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .brand-tagline::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--accent-teal);
+        border-radius: 999px;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        gap: 2.5rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
+        background: var(--surface-strong);
+        border: 1px solid var(--surface-strong);
+        color: var(--primary);
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        line-height: 1.05;
+        margin: 0.75rem 0;
+        color: var(--surface-strong);
+      }
+
+      .hero p {
+        max-width: 46ch;
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.82);
+        margin: 0;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+
+      .cta button {
+        background: var(--surface-strong);
+        color: var(--primary);
+        border: 2px solid var(--surface-strong);
+        border-radius: 999px;
+        padding: 0.85rem 1.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.25s ease;
+        box-shadow:
+          0 14px 32px rgba(0, 0, 0, 0.18),
+          inset 0 2px 0 rgba(255, 255, 255, 0.6);
+      }
+
+      .cta button:hover {
+        transform: translateY(-1px);
+        box-shadow:
+          0 18px 36px rgba(0, 0, 0, 0.22),
+          inset 0 2px 0 rgba(255, 255, 255, 0.7);
+      }
+
+      .cta span {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.95rem;
+      }
+
+      main {
+        flex: 1;
+        display: grid;
+        gap: 2rem;
+        padding: clamp(1.5rem, 4vw, 3.5rem);
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.4), transparent 55%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 235, 97, 0.38) 100%);
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .empty-state {
+        margin-top: 1.5rem;
+        color: var(--text-base);
+        font-size: 1rem;
+      }
+
+      .card {
+        background: var(--surface-strong);
+        border-radius: 22px;
+        padding: 1.75rem;
+        border: 1px solid var(--primary-soft);
+        box-shadow: 0 18px 42px var(--shadow-soft);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .badge {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        background: var(--primary);
+        color: var(--surface-strong);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+
+      .match-title {
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin: 0;
+        color: var(--text-strong);
+      }
+
+      .opponent {
+        color: var(--text-muted);
+        font-weight: 400;
+      }
+
+      .meta {
+        display: grid;
+        gap: 0.75rem;
+        color: var(--text-base);
+      }
+
+      .meta-row {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 0.95rem;
+      }
+
+      .meta-row strong {
+        color: var(--text-strong);
+      }
+
+      .meta-label {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.72rem;
+        color: var(--text-muted);
+      }
+
+      .cta-secondary {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--surface-strong);
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.55rem 1rem;
+        border-radius: 999px;
+        background: var(--accent-teal);
+        box-shadow: 0 8px 20px var(--accent-teal-soft);
+        transition: transform 0.2s ease, box-shadow 0.25s ease;
+      }
+
+      .cta-secondary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 26px var(--accent-teal-soft);
+      }
+
+      .features {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .feature-card {
+        background: var(--surface-strong);
+        padding: 1.5rem;
+        border-radius: 18px;
+        border: 1px solid var(--primary-soft);
+        box-shadow: 0 14px 34px var(--shadow-soft);
+      }
+
+      .feature-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      footer {
+        padding: 2rem clamp(1.5rem, 4vw, 3rem);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        background: linear-gradient(180deg, var(--highlight-soft), rgba(255, 255, 255, 0.92));
+        border-top: 1px solid var(--primary-soft);
+      }
+
+      @media (max-width: 720px) {
+        header {
+          padding: 2.5rem 1.5rem;
+        }
+
+        .header-inner {
+          gap: 2rem;
+        }
+
+        .brand {
+          gap: 0.65rem;
+        }
+
+        .logo-mark {
+          width: 38px;
+          height: 38px;
+          border-radius: 10px;
+        }
+
+        .brand-name {
+          font-size: 1.2rem;
+        }
+
+        .brand-tagline {
+          font-size: 0.7rem;
+        }
+
+        .cta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cta span {
+          margin-top: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/dayjs@1/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1/plugin/utc.js"></script>
+    <script src="https://unpkg.com/dayjs@1/plugin/timezone.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      dayjs.extend(dayjs_plugin_utc);
+      dayjs.extend(dayjs_plugin_timezone);
+
+      const fallbackFixtures = [
+        {
+          id: 1,
+          opponent: "Chelsea",
+          competition: "Premier League",
+          venue: "Anfield",
+          date: "2025-02-09T16:30:00Z",
+          stream: "Sky Sports Main Event",
+          watchLink: "#watch-chelsea",
+        },
+        {
+          id: 2,
+          opponent: "Bayern Munich",
+          competition: "UEFA Champions League Round of 16",
+          venue: "Allianz Arena",
+          date: "2025-02-19T20:00:00Z",
+          stream: "Paramount+",
+          watchLink: "#watch-bayern",
+        },
+        {
+          id: 3,
+          opponent: "Tottenham Hotspur",
+          competition: "Premier League",
+          venue: "Tottenham Hotspur Stadium",
+          date: "2025-02-23T16:30:00Z",
+          stream: "Sky Sports Premier League",
+          watchLink: "#watch-spurs",
+        },
+        {
+          id: 4,
+          opponent: "Everton",
+          competition: "Premier League",
+          venue: "Goodison Park",
+          date: "2025-03-03T20:00:00Z",
+          stream: "TNT Sports 1",
+          watchLink: "#watch-everton",
+        },
+        {
+          id: 5,
+          opponent: "Arsenal",
+          competition: "Premier League",
+          venue: "Anfield",
+          date: "2025-03-08T12:30:00Z",
+          stream: "BT Sport 1",
+          watchLink: "#watch-arsenal",
+        },
+        {
+          id: 6,
+          opponent: "Aston Villa",
+          competition: "Premier League",
+          venue: "Villa Park",
+          date: "2025-03-15T17:30:00Z",
+          stream: "Peacock Premium",
+          watchLink: "#watch-villa",
+        },
+      ];
+
+      const selectUpcomingFixtures = (fixtures) =>
+        fixtures
+          .filter((fixture) => dayjs(fixture.date).isAfter(dayjs().subtract(1, "day")))
+          .sort((a, b) => dayjs(a.date).diff(dayjs(b.date)))
+          .slice(0, 5);
+
+      const useUpcomingFixtures = () => {
+        const [matches, setMatches] = React.useState(() =>
+          selectUpcomingFixtures(fallbackFixtures)
+        );
+
+        React.useEffect(() => {
+          let active = true;
+
+          fetch("fixtures.json")
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`Request failed with ${response.status}`);
+              }
+              return response.json();
+            })
+            .then((data) => {
+              if (!Array.isArray(data)) {
+                throw new Error("Fixtures payload malformed");
+              }
+
+              if (active) {
+                setMatches(selectUpcomingFixtures(data));
+              }
+            })
+            .catch((error) => {
+              console.error("Unable to load fixtures:", error);
+            });
+
+          return () => {
+            active = false;
+          };
+        }, []);
+
+        return matches;
+      };
+
+      const formatMatchDate = (isoDate) => {
+        const utc = dayjs.utc(isoDate);
+        return {
+          local: utc.local().format("dddd, D MMM YYYY"),
+          kickoff: utc.local().format("HH:mm"),
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        };
+      };
+
+      const Countdown = ({ date }) => {
+        const [timeLeft, setTimeLeft] = React.useState(getTimeLeft(date));
+
+        React.useEffect(() => {
+          const id = setInterval(() => setTimeLeft(getTimeLeft(date)), 1000 * 60);
+          return () => clearInterval(id);
+        }, [date]);
+
+        if (!timeLeft) {
+          return <span className="badge">Live Now</span>;
+        }
+
+        return <span className="badge">{timeLeft}</span>;
+      };
+
+      const getTimeLeft = (isoDate) => {
+        const now = dayjs();
+        const kickoff = dayjs(isoDate);
+        if (kickoff.isBefore(now)) return null;
+
+        const diffMinutes = kickoff.diff(now, "minute");
+        const days = Math.floor(diffMinutes / (60 * 24));
+        const hours = Math.floor((diffMinutes % (60 * 24)) / 60);
+        const minutes = diffMinutes % 60;
+
+        const segments = [];
+        if (days > 0) segments.push(`${days}d`);
+        if (hours > 0) segments.push(`${hours}h`);
+        segments.push(`${minutes}m`);
+
+        return `Starts in ${segments.join(" ")}`;
+      };
+
+      const MatchCard = ({ fixture }) => {
+        const { local, kickoff, timezone } = formatMatchDate(fixture.date);
+
+        return (
+          <article className="card">
+            <div className="card-header">
+              <div>
+                <h2 className="match-title">
+                  Liverpool <span className="opponent">vs {fixture.opponent}</span>
+                </h2>
+                <div className="meta-label">{fixture.competition}</div>
+              </div>
+              <Countdown date={fixture.date} />
+            </div>
+
+            <div className="meta">
+              <div className="meta-row">
+                <strong>Venue:</strong>
+                <span>{fixture.venue}</span>
+              </div>
+              <div className="meta-row">
+                <strong>Date:</strong>
+                <span>{local}</span>
+              </div>
+              <div className="meta-row">
+                <strong>Kick-off:</strong>
+                <span>
+                  {kickoff} <span className="meta-label">{timezone}</span>
+                </span>
+              </div>
+              <div className="meta-row">
+                <strong>Stream:</strong>
+                <span>{fixture.stream}</span>
+              </div>
+            </div>
+
+            <a className="cta-secondary" href={fixture.watchLink}>
+              Launch stream ➜
+            </a>
+          </article>
+        );
+      };
+
+      const Features = () => (
+        <section>
+          <h2 className="pill">Why fans love GameOn</h2>
+          <div className="features">
+            <div className="feature-card">
+              <h3>Ultra HD Streams</h3>
+              <p>
+                Enjoy every match in buttery-smooth 4K with adaptive bitrate streams
+                optimized for mobile, desktop, and living room screens.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Second-Screen Mode</h3>
+              <p>
+                Tactical insights, live stats, and instant highlights sync with the main
+                broadcast, so you always stay ahead of the play.
+              </p>
+            </div>
+            <div className="feature-card">
+              <h3>Matchday Alerts</h3>
+              <p>
+                Set reminders for kick-off, goals, and breaking Reds news delivered
+                instantly to your preferred device.
+              </p>
+            </div>
+          </div>
+        </section>
+      );
+
+      const App = () => {
+        const matches = useUpcomingFixtures();
+
+        return (
+          <div className="app-shell">
+            <header>
+              <div className="header-inner">
+                <div className="brand">
+                  <div className="logo-mark">GO</div>
+                  <div className="brand-text">
+                    <span className="brand-name">GameOn</span>
+                    <span className="brand-tagline">Liverpool Streaming Hub</span>
+                  </div>
+                </div>
+
+                <div className="hero">
+                  <span className="pill">Live from Anfield & beyond</span>
+                  <h1>Stream every Liverpool match with stadium-level intensity.</h1>
+                  <p>
+                    GameOn gives you the matchday experience wherever you are. Crystal-clear
+                    commentary, multi-angle replays, and real-time stats keep you connected to
+                    the Reds in every competition.
+                  </p>
+                  <div className="cta">
+                    <button>Join the waitlist</button>
+                    <span>Be first to know when GameOn goes live</span>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <main>
+              <section>
+                <h2 className="pill">Next 5 fixtures</h2>
+                {matches.length > 0 ? (
+                  <div className="grid">
+                    {matches.map((fixture) => (
+                      <MatchCard key={fixture.id} fixture={fixture} />
+                    ))}
+                  </div>
+                ) : (
+                  <p className="empty-state">No upcoming fixtures available right now.</p>
+                )}
+              </section>
+
+              <Features />
+            </main>
+
+            <footer>
+              © {new Date().getFullYear()} GameOn. Liverpool FC streaming destination for
+              supporters worldwide.
+            </footer>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
