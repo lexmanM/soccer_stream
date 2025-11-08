@@ -1,74 +1,92 @@
 [
   {
-    "id": 1,
-    "opponent": "Chelsea",
+    "id": 20251215,
+    "opponent": "AC Milan",
+    "competition": "Dubai Super Cup",
+    "venue": "Al Maktoum Stadium, Dubai",
+    "date": "2025-12-15T18:00:00Z",
+    "stream": "GameOn+",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-ac-milan"
+  },
+  {
+    "id": 20251219,
+    "opponent": "New York Red Bulls",
+    "competition": "Club World Tour",
+    "venue": "Red Bull Arena, New Jersey",
+    "date": "2025-12-19T00:00:00Z",
+    "stream": "GameOn+",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-nyrb"
+  },
+  {
+    "id": 20251226,
+    "opponent": "AFC Bournemouth",
     "competition": "Premier League",
     "venue": "Anfield",
-    "date": "2025-02-09T16:30:00Z",
+    "date": "2025-12-26T17:30:00Z",
     "stream": "Sky Sports Main Event",
-    "watchLink": "https://watch.gameon/fixtures/liverpool-chelsea"
+    "watchLink": "https://watch.gameon/fixtures/liverpool-bournemouth"
   },
   {
-    "id": 2,
-    "opponent": "Bayern Munich",
-    "competition": "UEFA Champions League Round of 16",
-    "venue": "Allianz Arena",
-    "date": "2025-02-19T20:00:00Z",
+    "id": 20251230,
+    "opponent": "Aston Villa",
+    "competition": "Premier League",
+    "venue": "Villa Park",
+    "date": "2025-12-30T20:00:00Z",
+    "stream": "TNT Sports 1",
+    "watchLink": "https://watch.gameon/fixtures/villa-liverpool"
+  },
+  {
+    "id": 20260104,
+    "opponent": "Real Betis",
+    "competition": "Winter Series",
+    "venue": "Camping World Stadium, Orlando",
+    "date": "2026-01-04T01:30:00Z",
+    "stream": "GameOn+",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-real-betis"
+  },
+  {
+    "id": 20260112,
+    "opponent": "Manchester City",
+    "competition": "Premier League",
+    "venue": "Anfield",
+    "date": "2026-01-12T16:30:00Z",
+    "stream": "Sky Sports Ultra HD",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-man-city"
+  },
+  {
+    "id": 20260118,
+    "opponent": "Paris FC",
+    "competition": "Global Reds Cup",
+    "venue": "Singapore National Stadium",
+    "date": "2026-01-18T12:00:00Z",
+    "stream": "GameOn+",
+    "watchLink": "https://watch.gameon/fixtures/liverpool-paris-fc"
+  },
+  {
+    "id": 20260126,
+    "opponent": "Ajax",
+    "competition": "Champions Tour",
+    "venue": "Johan Cruyff Arena, Amsterdam",
+    "date": "2026-01-26T19:00:00Z",
     "stream": "Paramount+",
-    "watchLink": "https://watch.gameon/fixtures/bayern-liverpool"
+    "watchLink": "https://watch.gameon/fixtures/ajax-liverpool"
   },
   {
-    "id": 3,
+    "id": 20260202,
     "opponent": "Tottenham Hotspur",
     "competition": "Premier League",
     "venue": "Tottenham Hotspur Stadium",
-    "date": "2025-02-23T16:30:00Z",
+    "date": "2026-02-02T17:30:00Z",
     "stream": "Sky Sports Premier League",
     "watchLink": "https://watch.gameon/fixtures/spurs-liverpool"
   },
   {
-    "id": 4,
-    "opponent": "Everton",
-    "competition": "Premier League",
-    "venue": "Goodison Park",
-    "date": "2025-03-03T20:00:00Z",
+    "id": 20260208,
+    "opponent": "Bayern Munich",
+    "competition": "UEFA Super Cup",
+    "venue": "Puskás Aréna, Budapest",
+    "date": "2026-02-08T20:00:00Z",
     "stream": "TNT Sports 1",
-    "watchLink": "https://watch.gameon/fixtures/merseyside-derby"
-  },
-  {
-    "id": 5,
-    "opponent": "Arsenal",
-    "competition": "Premier League",
-    "venue": "Anfield",
-    "date": "2025-03-08T12:30:00Z",
-    "stream": "BT Sport 1",
-    "watchLink": "https://watch.gameon/fixtures/liverpool-arsenal"
-  },
-  {
-    "id": 6,
-    "opponent": "Aston Villa",
-    "competition": "Premier League",
-    "venue": "Villa Park",
-    "date": "2025-03-15T17:30:00Z",
-    "stream": "Peacock Premium",
-    "watchLink": "https://watch.gameon/fixtures/villa-liverpool"
-  },
-  {
-    "id": 7,
-    "opponent": "Manchester City",
-    "competition": "Premier League",
-    "venue": "Etihad Stadium",
-    "date": "2025-03-30T15:30:00Z",
-    "stream": "Sky Sports Ultra HD",
-    "watchLink": "https://watch.gameon/fixtures/man-city-liverpool"
-  },
-  {
-    "id": 8,
-    "opponent": "West Ham United",
-    "competition": "Premier League",
-    "venue": "London Stadium",
-    "date": "2025-04-05T17:30:00Z",
-    "stream": "USA Network",
-    "watchLink": "https://watch.gameon/fixtures/west-ham-liverpool"
+    "watchLink": "https://watch.gameon/fixtures/bayern-liverpool"
   }
 ]
